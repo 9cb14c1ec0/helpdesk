@@ -30,6 +30,7 @@ class HelpdeskTicketCreateLead(models.TransientModel):
     def _prepare_vals(self):
         return {
             "ticket_id": self.ticket_id.id,
+            "email_from": self.ticket_id.partner_email,
             "name": self.ticket_id.name,
             "partner_id": self.ticket_id.partner_id.id,
             "user_id": self.user_id.id or self.ticket_id.user_id.id,

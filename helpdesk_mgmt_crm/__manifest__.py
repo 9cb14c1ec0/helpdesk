@@ -1,7 +1,8 @@
 # Copyright 2022 Tecnativa - Víctor Martínez
+# Copyright 2025 Edwin Zimmerman
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 {
-    "name": "Link between Helpdesk and CRM",
+    "name": "Link between Helpdesk and Leads",
     "summary": "Links helpdesk tickets with leads",
     "version": "17.0.1.0.1",
     "category": "After-Sales",

@@ -19,7 +19,7 @@ class HelpdeskTicket(models.Model):
     @api.depends("lead_ids")
     def _compute_lead_count(self):
         lead_data = self.env["crm.lead"].read_group(
-            [("ticket_id", "in", self.ids)],
+            [("email_from", "=", self.partner_email)],
             ["ticket_id"],
             ["ticket_id"],
         )
