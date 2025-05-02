@@ -51,4 +51,9 @@ class HelpdeskTicket(models.Model):
             )
             if existing_tickets:
                 vals["related_ticket_ids"] = existing_tickets
-        return super(HelpdeskTicket, self).create(vals)
+            res = super(HelpdeskTicket, self).create(vals)
+            for ticket in existing_tickets:
+                    ticket.write({"related_ticket_ids": [(4, self.id)]})
+        else:
+            res = super(HelpdeskTicket, self).create(vals)
+        return res
