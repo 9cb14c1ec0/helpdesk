@@ -4,9 +4,8 @@
     <menuitem
         id="mail_activity_plan_menu_config_lead"
         name="Activity Plans"
-        parent="helpdesk_ticket_config_main_menu"
+        parent="helpdesk_mgmt.helpdesk_ticket_config_main_menu"
         action="mail_activity_plan_action_lead"
-        groups="sales_team.group_sale_manager"
         sequence="11"
     />
     <record id="mail_activity_plan_action_lead" model="ir.actions.act_window">
