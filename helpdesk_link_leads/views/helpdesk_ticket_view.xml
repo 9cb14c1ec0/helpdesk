@@ -8,7 +8,7 @@
         action="mail_activity_plan_action_lead"
         sequence="11"
     />
-    <record id="mail_activity_plan_action_lead" model="ir.actions.act_window">
+    <record id="helpdesk_link_leads.mail_activity_plan_action_lead" model="ir.actions.act_window">
             <field name="name">Lead Plans</field>
             <field name="res_model">mail.activity.plan</field>
             <field name="view_mode">list,kanban,form</field>
