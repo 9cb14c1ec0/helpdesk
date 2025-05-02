@@ -47,16 +47,6 @@ class HelpdeskTicketCreateLead(models.TransientModel):
                 subtype_ids=follower.subtype_ids.ids,
             )
         self.ticket_id.write({"lead_ids": [(4, lead.id)]})
-        for message in self.ticket_id.message_ids:
-            message.copy(
-                {
-                    "model": lead._name,
-                    "res_id": lead.id,
-                    # prevent null value in column "notification_type" if message
-                    # have notifications (not copied)
-                    "notified_partner_ids": False,
-                }
-            )
         # Chatter reflects new Lead
         body = Markup(
             _("This ticket has been converted to the opportunity %(lead_link)s")

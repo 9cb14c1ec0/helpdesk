@@ -9,7 +9,7 @@
     "website": "https://github.com/OCA/helpdesk",
     "author": "Tecnativa, Odoo Community Association (OCA)",
     "license": "AGPL-3",
-    "depends": ["helpdesk_mgmt", "crm"],
+    "depends": ["helpdesk_mgmt", "crm", "helpdesk_ticket_related"],
     "data": [
         "security/ir.model.access.csv",
         "wizard/helpdesk_ticket_create_lead_views.xml",
