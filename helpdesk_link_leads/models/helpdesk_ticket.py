@@ -23,7 +23,7 @@ class HelpdeskTicket(models.Model):
             ["ticket_id"],
             ["ticket_id"],
         )
-        mapped_data = {t["ticket_id"][0]: t["ticket_id_count"] for t in lead_data}
+        mapped_data = {t["ticket_id"][0]: t["ticket_id_count"] for t in lead_data if t["ticket_id"]}
         for item in self:
             item.lead_count = mapped_data.get(item.id, 0)
 
@@ -52,4 +52,14 @@ class HelpdeskTicket(models.Model):
             if existing_tickets:
                 vals["related_ticket_ids"] = existing_tickets
         return super(HelpdeskTicket, self).create(vals)
+    
+    def write(self, vals):
+        if vals.get("partner_email"):
+            # search existing tickets for same email
+            existing_tickets = self.search(
+                [("partner_email", "=", vals["partner_email"])]
+            )
+            if existing_tickets:
+                vals["related_ticket_ids"] = existing_tickets
+        return super(HelpdeskTicket, self).write(vals)
     
