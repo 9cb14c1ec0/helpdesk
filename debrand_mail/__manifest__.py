@@ -13,7 +13,7 @@
     ( for powerd by) form all the templates
     removes any 'odoo' that are in tempalte texts > 20characters
     """,
-    "version": "18.0.1.0.1",
+    "version": "17.0.1.0.1",
     "category": "Social Network",
     "website": "https://github.com/OCA/mail",
     "author": """Tecnativa, ForgeFlow, Onestein, Sodexis, Nexterp Romania,
